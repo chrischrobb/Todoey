@@ -12,8 +12,14 @@ class TodoListViewController: UITableViewController {
 
     var itemArray = ["Find Mike", "Buy Eggs", "Desroy Dragon"]
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let items = defaults.array(forKey: "TodoListArray") as? [String] {
+            itemArray = items
+        }
         
         // nie musismy w table view controller robic outler i action z tacjitego z e importujemy na gorze UITableViewontroller mamy wszystko juz w sobie samo sie dzieje w tej bibliotece, wszystko jest polaczone
        
@@ -55,6 +61,9 @@ class TodoListViewController: UITableViewController {
             
             self.itemArray.append(textField.text!)
             //po dodaniu do tabeli musimy przeładować tabelę by wyswietlil sie nowy element dodany
+            
+            self.defaults.set(self.itemArray, forKey: "TodoListArray")
+            
             self.tableView.reloadData()
             
         }
