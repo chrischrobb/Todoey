@@ -15,8 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
         // to jest to pierwsze co sie laduje zanim laduje sie inicial view controller
-        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+        //print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).last! as String)
+        //zapis umozliwiw a koncoli sprawdzenei gdzie zapisuja sie nasze dane w tym wypadku User Defaults
         return true
     }
 
