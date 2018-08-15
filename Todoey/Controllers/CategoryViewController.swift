@@ -55,7 +55,7 @@ class CategoryViewController: UITableViewController {
             if let indexPath = tableView.indexPathForSelectedRow {
                 destinationVC.selectedCategory = categories[indexPath.row]
             }
-//        } else {
+//        } else {  
 //            print("inny sequey mozna tu dodac")
 //        }
     }
